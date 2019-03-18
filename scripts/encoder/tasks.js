@@ -71,8 +71,13 @@ module.exports = {
 	encodeIntraFrame( execPath, sourcePath, imageQuality, outputPath ) {
 		return utils.spawnProcess(execPath, ['-i', sourcePath, '-o', outputPath, '-q', imageQuality])
 			.then(( encoderData ) => {
+				try{
 				var psnrValue = parseFloat(encoderData.match(/PSNR: (\d+.\d+)dB/)[1]);
 				var ssimValue = parseFloat(encoderData.match(/SSIM: (\d+.\d+)/)[1]);
+				}
+				catch(ex){
+					console.log("Got exception on " + sourcePath + "\n" + encoderData + "\n")
+				}
 
 				// Optimize JPEG output
 				return utils.spawnProcess('jpegoptim', ['--strip-all', outputPath]).then(() => {

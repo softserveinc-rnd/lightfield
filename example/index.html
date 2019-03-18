@@ -66,10 +66,11 @@
 
 			window.addEventListener('resize', resizeViewer);
 
-			instance.load('field-cards');
+			instance.load('futuristic-car');
 
 			document.querySelector('#file-cards').addEventListener('click', function() { instance.load('field-cards') });
 			document.querySelector('#file-chess').addEventListener('click', function() { instance.load('field-chess') });
+            document.querySelector('#futuristic-car').addEventListener('click', function() { instance.load('futuristic-car') });
 		});
 	</script>
 </head>
@@ -78,7 +79,8 @@
 		<div id="viewer"></div>
 		<div id="controls">
 			<div class="button" id="file-cards">Light field 1</div>
-			<div class="button" id="file-chess">Light field 2</div>
+            <div class="button" id="file-chess">Light field 2</div>
+            <div class="button" id="futuristic-car">Light field 3</div>
 
 			<a class="link" href="https://github.com/mpk/lightfield" target="blank">Source on GitHub</a>
 			<a class="link" href="http://lightfield.stanford.edu/" target="blank">Light fields from Stanford University</a>
