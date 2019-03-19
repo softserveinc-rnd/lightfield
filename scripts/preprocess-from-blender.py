@@ -1,6 +1,6 @@
 # cd scripts
 # python3 preprocess-from-blender.py futuristic-car-raw/
-# node encoder.js -i futuristic-car-raw/ -o futuristic-car/ -w 25 -h 15 -q 75
+# node encoder.js -i futuristic-car-raw/ -o futuristic-car/ -w 35 -h 25 -q 75
 # cd ..
 # python3 -m http.server
 
